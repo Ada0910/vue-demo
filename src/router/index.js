@@ -1,20 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '../pages/index'
-import pageButton from '../pages/index'
-import index from '../pages/index'
-import index from '../pages/index'
+import PostList from '@/components/PostList'
+import Article from '@/components/Article'
+import SideBar from '@/components/SideBar'
+import UserInfo from '@/components/UserInfo'
 
-
-//显示声明用到路由
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: index
+      name: 'root',
+      components: {
+        main: PostList
+      }
+    },
+    {
+      path: 'topic/:id&author=:name',
+      name: 'post_content',
+      components: {
+        main: Article,
+        sidebar: SideBar
+      }
+    },
+    {
+      path: 'user/:name',
+      name: 'user_info',
+      components: {
+        main: UserInfo
+      }
     }
   ]
 })
