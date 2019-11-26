@@ -1,7 +1,7 @@
 <template>
   <div class="Header">
     <router-link>
-      <img src="../assets/google.png"/>
+      <img src="../assets/logo.png"/>
     </router-link>
     <span><a href="#">关于</a></span>
   </div>
